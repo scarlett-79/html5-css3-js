@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //比如页面url是https://xxx.com/xxx?a=dddd
+        //实现一个函数，入参是key，出参是这个key在url参数中的值
+        var url = 'https://xxx.com/xxx?a=dddd';
+        function getUrlParam(key) {
+            var index = url.indexOf("?");
+            var str = url.substr(index + 1);
+            var arr = str.split("&");
+            for (var i = 0; i < arr.length; i++) {
+                newArr = arr[i].split("=");
+            }
+            for (var j = 0; j < newArr.length; j = j + 2) {
+                if (key === newArr[j]) {
+                    return newArr[j + 1];
+                }
+                else {
+                    return false;
+                }
+            }
+
+        }
+        console.log(getUrlParam('a'))
+    </script>
+</body>
+
+</html>

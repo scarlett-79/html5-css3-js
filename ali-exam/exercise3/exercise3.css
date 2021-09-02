@@ -1,0 +1,81 @@
+.box {
+    width: 900px;
+    height: 600px;
+    border: 1px solid grey;
+    margin: 100px auto;
+}
+
+.box_top {
+    height: 150px;
+    width: 750px;
+}
+
+.box_bottom {
+    height: 350px;
+    width: 750px;
+    border: 1px solid grey;
+    margin-left: 80px;
+}
+
+.mname {
+    float: left;
+    height: 40px;
+    width: 70px;
+    border: 1px solid grey;
+    margin-left: 80px;
+    margin-top: 30px;
+    line-height: 40px;
+    padding-left: 18px;
+    font-size: 12px;
+}
+
+.name {
+    float: left;
+    height: 40px;
+    width: 90px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: lightgrey;
+    border: none;
+}
+
+.mfrom {
+    float: left;
+    height: 40px;
+    width: 70px;
+    border: 1px solid grey;
+    margin-left: 120px;
+    margin-top: 30px;
+    line-height: 40px;
+    padding-left: 18px;
+    font-size: 12px;
+}
+
+.from {
+    float: left;
+    height: 40px;
+    width: 90px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: lightgrey;
+    border: none;
+    text-decoration: none;
+}
+
+.box_bottom td {
+    height: 30px;
+    padding: 0 15px;
+    margin: 20px;
+    border: 1px solid grey;
+    line-height: 30px;
+}
+
+.btn {
+    float: right;
+    height: 40px;
+    width: 90px;
+    margin-left: 40px;
+    margin-top: 30px;
+    background-color: lightgrey;
+    border: none;
+}

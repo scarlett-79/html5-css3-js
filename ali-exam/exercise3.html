@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="exercise3.css">
+    <style>
+        .tableclass {
+
+            display: inline-block;
+            height: 30px;
+            padding: 0 15px;
+            margin: 20px;
+            border: 1px solid grey;
+            line-height: 30px;
+
+        }
+    </style>
+    <script>
+        var data = new Array();
+        data[0] = { name: "你好，李焕英", murl: "https://www.douban.com/search?q=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9D%8E%E7%84%95%E8%8B%B1", director: "贾玲", nation: "中国" }
+        data[1] = { name: "唐人街探案", murl: "https://www.douban.com/search?q=%E5%94%90%E4%BA%BA%E8%A1%97%E6%8E%A2%E6%A1%88", director: "陈思成", nation: "中国" }
+        data[2] = { name: "泰坦尼克号", murl: "https://www.douban.com/search?q=%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7", director: "詹姆斯·卡梅隆", nation: "美国" }
+        function buttonClick() {
+            var tableobj = document.getElementById("tid");
+            for (var i = 0; i < data.length; i++) {
+                if (moviecheck.moviename.value === data[i].name) {
+                    var trobj = document.createElement("tr");
+                    var tdobj1 = document.createElement("td");
+                    var tdobj2 = document.createElement("td");
+                    var tdobj3 = document.createElement("td");
+                    var tdobj4 = document.createElement("td");
+                    tdobj1.innerText = data[i].name;
+                    tdobj2.innerText = data[i].murl;
+                    tdobj3.innerText = data[i].director;
+                    tdobj4.innerText = data[i].nation;
+                    document.getElementsByTagName("td").classname = "tableclass";
+                    tableobj.appendChild(trobj);
+                    trobj.appendChild(tdobj1);
+                    trobj.appendChild(tdobj2);
+                    trobj.appendChild(tdobj3);
+                    trobj.appendChild(tdobj4);
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--1.table默认不展示数据，默认有电影名称（输入框），是否中国（下拉筛选框，是/否）-->
+    <!--可以根据输入框搜索电影（后端返回值可以自己mock），要求url是可以点击跳转访问的能力-->
+    <!--可以根据是否中国筛选框筛选返回的结果-->
+    <div class="box">
+        <div class="box_top">
+            <form name="moviecheck" action="" method="POST">
+                <div class="mname">电影名称</div>
+                <input type="text" class="name" value="      输入框" name="moviename">
+                <div class="mfrom">是否中国</div>
+                <select class="from" name="moviefrom">
+                    <option>下拉筛选框<br>（是/否）</option>
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                </select>
+                <input type="button" value="搜索" class="btn" id="button" onclick="buttonClick();">
+            </form>
+        </div>
+        <div class="box_bottom">
+            <table id=tid>
+                <th>
+                <td>电影名称</td>
+                <td>豆瓣url（要求可以点击访问）</td>
+                <td>导演名称</td>
+                <td>所属国家</td>
+                </th>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
